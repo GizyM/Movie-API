@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" .>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Project</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://kit.fontawesome.com/72b26c9e36.js"> crossorigin="anonymous"</script>
+</head>
+<body id="movies__body">
+    <section>
+    <nav>
+        <div class="nav__container">
+            <img class="logo" src="https://dev.d24jig8s1lr7n9.amplifyapp.com/img/whitelogo.39850b27.png" alt>
+            <ul class="nav__links">
+                <li>
+                    <a href="#" class="nav__link">Home</a>
+                </li>
+                <li>
+                    <a href="#movies" class="nav__link">Find your movie</a>
+                </li>
+                <li>
+                    <a href="#contact" class="nav__link nav__link--primary">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </section>
+    <main id="movies__main">
+        <section>
+            <div class="row">
+                <div class="movies__header">
+                    <h2 class="section___title movies__header--title"> All <span class="purple">Movies</span>
+                    </h2>
+                        <div class="search__bar">
+                            <input type="text" class="search__bar--input" placeholder="Search Movies..." id="searchInput">
+                            <button type="submit" class="search__bar--btn" id="searchBtn">Search</button>
+                         </div>
+                    <select id="filter" onchange="filterMovies(event)">
+                        <option value disabled selected>Sort</option>
+                        <option value="TITLE LOW_TO_HIGH">Title, A to Z</option>
+                        <option value="TITLE HIGH_TO_LOW">Title, Z to A</option>
+                        <option value="imdbRATING">imdbRating</option>
+                        <option value="YEAR LOW_TO_HIGH">Year, Oldest to Newest</option>
+                        <option value="YEAR HIGH_TO_LOW">Year, Newest to Oldest</option>
+                    </select>
+                </div>
+            </div>
+
+            <h4>Movie <span class="purple">List</span></h4>
+            <div id="movieContainer"></div>
+            <div id="resultsContainer"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row row__column">
+                <a href="#">
+                    <figure class="footer__logo">
+                        <img src="https://dev.d24jig8s1lr7n9.amplifyapp.com/img/whitelogo.39850b27.png" class="footer__logo--img" alt="">
+                    </figure>
+                </a>
+                <div class="footer__list">
+                    <a href="#" class="footer__link">Home</a>
+                    <a class="footer__link no-cursor">About</a>
+                    <a href="#features" class="footer__link">Movies</a>
+                    <a class="footer__link no-cursor">Contact</a>
+                </div>
+                <div class="footer__copyright">Copyright © 2025 Gizy Michel</div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
