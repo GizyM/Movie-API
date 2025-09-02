@@ -34,32 +34,23 @@
                     <h2 class="section___title movies__header--title"> All <span class="purple">Movies</span>
                     </h2>
                         <div class="search__bar">
-                            <input type="text" class="search__bar--input" placeholder="Search Movies..." id="searchInput">
+                            <input type="text" class="search__bar--input" placeholder="Search Movies..." onchange="searchChange(event)">
                             <button type="submit" class="search__bar--btn" id="searchBtn">Search</button>
                          </div>
-                    <select id="filter" onchange="filterMovies(event)">
-                        <option value disabled selected>Sort</option>
-                        <option value="TITLE LOW_TO_HIGH">Title, A to Z</option>
-                        <option value="TITLE HIGH_TO_LOW">Title, Z to A</option>
-                        <option value="imdbRATING">imdbRating</option>
-                        <option value="YEAR LOW_TO_HIGH">Year, Oldest to Newest</option>
-                        <option value="YEAR HIGH_TO_LOW">Year, Newest to Oldest</option>
+                    <select name="movieSort" id="movieSort" onchange="sortChange(event)">
+                        <option value disabled selected>Sort by year</option>
+                        <option value="newest">Newest to Oldest</option>
+                        <option value="oldest">Oldest to Newest</option>
                     </select>
                 </div>
             </div>
-
-            <h4>Movie <span class="purple">List</span></h4>
-            <div class="container">
-                <div class="row">
+            <div class="movies__loading">
+                <i class="fa-solid fa-compact-disc movies__loading--spinner"></i>
+            </div>
+            <h4>Movie <span class="purple">Results</span></h4><span class="searchName"></span>
                     <div class="movie-list">
                         <div class="movie">
                             <div class="movie-card">
-                                <div class="movie-card__container">
-                                    <h3>Movie Name</h3>
-                                    <p><b>Year: 2001</b></p>
-                                    <p><b>Genre: Action, Crime, Drama </b></p>
-                                    <p><b>Info Link:</b><a href="/movie.html" target="_blank">website.website</a></p>
-                                </div>
                             </div>
                         </div>
                     </div>
