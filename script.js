@@ -4,6 +4,7 @@ const searchName = document.querySelector(".searchName");
 const body = document.querySelector("#movies__body");
 const searchInput = document.querySelector(".search__bar--input");
 const searchButton = document.querySelector("#searchBtn");
+const movieLandingWrapper = document.querySelector(".movie__landing--wrapper");
 
 let currentMovies = [];
 
@@ -12,11 +13,9 @@ let currentMovies = [];
 async function getAndRenderMovies(searchTerm) {
     // Show the spinner by adding the class to the body
     body.classList.add('show-spinner');
-}
+    moviesWrapper.innerHTML = ''; // Clear previous results
 
-moviesWrapper.innerHTML = ''; // Clear previous results
-
-try {
+    try {
     const response = await fetch(
         `https://omdbapi.com/?s=${searchTerm}&apikey=826b9a2e`
     );
@@ -38,7 +37,7 @@ try {
     // Hide the spinner regardless of success or failure
     body.classList.remove('show-spinner');
   }
-
+}
 
 function displayMovies(movieList) {
     if (!movieList || movieList.length === 0) {
@@ -88,3 +87,10 @@ searchInput.addEventListener("keypress", (event) => {
         getAndRenderMovies(searchTerm);
     }
 });
+
+function hideMovieLandingWrapper () {
+    const image = document.getElementById('movie__night');
+    if (image === "click") {
+        image.style.display = 'none';
+    }
+}
