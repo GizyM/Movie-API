@@ -4,7 +4,7 @@ const searchName = document.querySelector(".searchName");
 const body = document.querySelector("#movies__body");
 const searchInput = document.querySelector(".search__bar--input");
 const searchButton = document.querySelector("#searchBtn");
-const movieLandingWrapper = document.querySelector(".movie__landing--wrapper");
+const image = document.querySelector(".movie__night");
 
 let currentMovies = [];
 
@@ -88,9 +88,4 @@ searchInput.addEventListener("keypress", (event) => {
     }
 });
 
-function hideMovieLandingWrapper () {
-    const image = document.getElementById('movie__night');
-    if (image === "click") {
-        image.style.display = 'none';
-    }
-}
+image.style.display = 'none';
