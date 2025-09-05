@@ -5,6 +5,7 @@ const body = document.querySelector("#movies__body");
 const searchInput = document.querySelector(".search__bar--input");
 const searchButton = document.querySelector("#searchBtn");
 const image = document.querySelector(".movie__night");
+const text = document.querySelector(".img__text");
 
 let currentMovies = [];
 
@@ -14,7 +15,8 @@ async function getAndRenderMovies(searchTerm) {
     // Show the spinner by adding the class to the body
     body.classList.add('show-spinner');
     moviesWrapper.innerHTML = ''; // Clear previous results
-
+    image.style.display = 'none';
+    text.style.display = 'none';
     try {
     const response = await fetch(
         `https://omdbapi.com/?s=${searchTerm}&apikey=826b9a2e`
@@ -87,5 +89,3 @@ searchInput.addEventListener("keypress", (event) => {
         getAndRenderMovies(searchTerm);
     }
 });
-
-image.style.display = 'none';

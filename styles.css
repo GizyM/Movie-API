@@ -438,33 +438,38 @@ footer {
     padding: 0 8px;
 }
 
+@media (max-width: 1024px) {
+    .movie__landing--wrapper {
+        width: 100%;
+        max-width: 512px;
+        margin: 0 auto;
+    }
+    .img__text {
+        margin: 20px 0;
+    }
+}
+
 @media (max-width: 728px) {
     .nav__links {
         display: none !important;
     }
-
     .movie img {
         min-height: 300px;
     }
-
     .movie h2 {
         font-size: 15px;
         max-width: 200px;
     }
-
     .movie h4 {
         font-size: 12px;
         max-width: 200px;
     }
-
     .movie button {
         font-size: 12px;
     }
-
     h3 {
         font-size: 12px;
     }
-
     .nav__container .logo {
         width: 120px;
         height: initial;
@@ -472,8 +477,20 @@ footer {
         display: flex;
         margin-right: 10px;
     }
-
     .movie {
         margin-bottom: 30px;
+    }
+    .movies__header {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .search__bar {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .movie__night {
+        display: block;
     }
 }
